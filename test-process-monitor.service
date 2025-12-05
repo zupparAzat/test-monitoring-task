@@ -1,0 +1,8 @@
+[Unit]
+Description=Мониторинг процесса test
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/test-process-monitor.sh
+User=root
