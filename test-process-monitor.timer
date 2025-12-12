@@ -1,10 +1,11 @@
 [Unit]
-Description=Запускать мониторинг процесса test каждую минуту
+Description=Запуск мониторинга процесса test каждую минуту
+Requires=test-process-monitor.service
 
 [Timer]
-OnBootSec=30sec
-OnUnitActiveSec=60
-AccuracySec=5s
+OnBootSec=1min
+OnUnitActiveSec=1min
+AccuracySec=10s
 Persistent=true
 
 [Install]
