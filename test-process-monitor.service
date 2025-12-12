@@ -1,8 +1,13 @@
 [Unit]
-Description=Мониторинг процесса test
+Description=Мониторинг процесса test и отчёт на внешний сервер
+Documentation=man:test-process-monitor.sh
+Wants=network-online.target
 After=network-online.target
 
 [Service]
 Type=oneshot
 ExecStart=/usr/local/bin/test-process-monitor.sh
+StandardOutput=journal
+StandardError=journal
+# Запускаем от root, потому что pgrep и запись в /var/log
 User=root
